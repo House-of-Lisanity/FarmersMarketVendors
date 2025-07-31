@@ -3,19 +3,25 @@ const demoProducts = [
     name: "Brown Butter Chocolate Chip Cookies",
     price: "$4 each",
     description: "Crispy edges, gooey center. A fan favorite.",
-    imageUrl: "https://images.unsplash.com/photo-1607083206173-47f1a06a0c19",
+    imageUrl: "/brownies.jpg",
   },
   {
     name: "Mini Lemon Loaf",
     price: "$5",
     description: "Moist lemon cake with a tangy glaze.",
-    imageUrl: "https://images.unsplash.com/photo-1589308078057-9727293d2b37",
+    imageUrl: "/cake.jpg",
   },
   {
     name: "Salted Caramel Brownies",
     price: "$3.50",
     description: "Rich dark chocolate with a gooey caramel swirl.",
-    imageUrl: "https://images.unsplash.com/photo-1617191519003-3e9732f05ef1",
+    imageUrl: "/cookies.jpg",
+  },
+  {
+    name: "Freshly Baked Sourdough Bread",
+    price: "$6",
+    description: "Crispy crust, soft inside. Perfect for sandwiches.",
+    imageUrl: "/icedcookie.jpg",
   },
 ];
 

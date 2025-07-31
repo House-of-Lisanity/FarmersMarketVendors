@@ -1,15 +1,19 @@
 const demoGallery = [
   {
-    url: "https://images.unsplash.com/photo-1548946526-f69e2424cf45",
+    url: "/market1.jpg",
     caption: "Baking in progress",
   },
   {
-    url: "https://images.unsplash.com/photo-1505253210343-d9f09b8493d4",
+    url: "/market2.jpg",
     caption: "Farmers Market Booth",
   },
   {
-    url: "https://images.unsplash.com/photo-1627308595229-7830a5c91f9f",
+    url: "/market3.jpg",
     caption: "Fresh from the oven",
+  },
+  {
+    url: "/market4.jpg",
+    caption: "Local produce",
   },
 ];
 

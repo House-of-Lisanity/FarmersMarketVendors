@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Card from "../components/Card";
+import CardSlider from "../components/CardSlider";
 
 type ReviewType = {
   _id: string;
@@ -31,19 +33,27 @@ export default function Reviews() {
 
   return (
     <section id="reviews">
-      <h2>Customer Reviews</h2>
-      {loading && <p>Loading reviews...</p>}
-      <ul>
+      <CardSlider>
         {reviews.map((r) => (
-          <li key={r._id}>
-            <blockquote>{r.content}</blockquote>
-            <p>
-              <strong>{r.name}</strong>{" "}
-              {r.date && <em>– {new Date(r.date).toLocaleDateString()}</em>}
-            </p>
-          </li>
+          <Card
+            key={r._id}
+            content={
+              <figure className="review-content">
+                <blockquote>{r.content}</blockquote>
+                <figcaption>
+                  {r.name}
+                  {r.date && (
+                    <span className="review-date">
+                      {" "}
+                      – {new Date(r.date).toLocaleDateString()}
+                    </span>
+                  )}
+                </figcaption>
+              </figure>
+            }
+          />
         ))}
-      </ul>
+      </CardSlider>
     </section>
   );
 }

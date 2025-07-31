@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import EventList from "@/components/EventList";
+import EventCalendar from "@/components/EventCalendar";
 
 type EventType = {
   _id: string;
@@ -13,6 +15,7 @@ type EventType = {
 export default function Calendar() {
   const [events, setEvents] = useState<EventType[]>([]);
   const [loading, setLoading] = useState(true);
+  const [viewMode, setViewMode] = useState<"list" | "calendar">("list");
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -33,19 +36,33 @@ export default function Calendar() {
   return (
     <section id="calendar">
       <h2>Upcoming Events</h2>
+      <div className="view-toggle">
+        <button
+          onClick={() => setViewMode("list")}
+          disabled={viewMode === "list"}
+        >
+          List View
+        </button>
+        <button
+          onClick={() => setViewMode("calendar")}
+          disabled={viewMode === "calendar"}
+        >
+          Calendar View
+        </button>
+      </div>
+
       {loading && <p>Loading events...</p>}
       {!loading && events.length === 0 && <p>No events scheduled right now.</p>}
-      <ul>
-        {events.map((event) => (
-          <li key={event._id}>
-            <strong>{event.title}</strong> –{" "}
-            {new Date(event.date).toLocaleDateString()}
-            <br />
-            <em>{event.location}</em>
-            {event.description && <p>{event.description}</p>}
-          </li>
-        ))}
-      </ul>
+
+      {!loading && events.length > 0 && (
+        <>
+          {viewMode === "list" ? (
+            <EventList events={events} />
+          ) : (
+            <EventCalendar events={events} />
+          )}
+        </>
+      )}
     </section>
   );
 }

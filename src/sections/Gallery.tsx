@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import CardSlider from "@/components/CardSlider";
+import Card from "@/components/Card";
 
 type ImageType = {
   _id: string;
@@ -9,15 +11,15 @@ type ImageType = {
 };
 
 export default function Gallery() {
-  const [images, setImages] = useState<ImageType[]>([]);
+  const [gallery, setGallery] = useState<ImageType[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchImages = async () => {
+    const fetchGallery = async () => {
       try {
         const res = await fetch("/api/gallery");
         const data = await res.json();
-        setImages(data);
+        setGallery(data);
       } catch (err) {
         console.error("Failed to load gallery:", err);
       } finally {
@@ -25,31 +27,18 @@ export default function Gallery() {
       }
     };
 
-    fetchImages();
+    fetchGallery();
   }, []);
 
   return (
     <section id="gallery">
       <h2>Gallery</h2>
       {loading && <p>Loading images...</p>}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-          gap: "1rem",
-        }}
-      >
-        {images.map((image) => (
-          <figure key={image._id}>
-            <img
-              src={image.url}
-              alt={image.caption || "Gallery image"}
-              style={{ width: "100%", borderRadius: "8px" }}
-            />
-            {image.caption && <figcaption>{image.caption}</figcaption>}
-          </figure>
+      <CardSlider>
+        {gallery.map((image) => (
+          <Card key={image._id} image={image.url} title={image.caption} />
         ))}
-      </div>
+      </CardSlider>
     </section>
   );
 }

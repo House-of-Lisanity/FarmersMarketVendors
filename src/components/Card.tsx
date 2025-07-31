@@ -1,9 +1,10 @@
 import Image from "next/image";
+import { ReactNode } from "react";
 
 type CardProps = {
   image?: string;
   title?: string;
-  content?: string;
+  content?: ReactNode | string;
   meta?: string;
   style?: React.CSSProperties;
 };
@@ -30,7 +31,8 @@ export default function Card({
       )}
       <div className="card-content">
         {title && <h3>{title}</h3>}
-        {content && <p>{content}</p>}
+        {content && (typeof content === "string" ? <p>{content}</p> : content)}
+
         {meta && <small>{meta}</small>}
       </div>
     </div>

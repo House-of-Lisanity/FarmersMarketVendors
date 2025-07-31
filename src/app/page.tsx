@@ -11,23 +11,25 @@ import Contact from "@/sections/Contact";
 
 export default function Home() {
   return (
-    <main>
-      {siteConfig.sections.map((section) => {
-        if (section.id === "hero") return <Hero key={section.id} />;
-        if (section.id === "calendar") return <Calendar key={section.id} />;
-        if (section.id === "products")
-          return <ProductSlider key={section.id} />;
-        if (section.id === "gallery") return <Gallery key={section.id} />;
-        if (section.id === "about") return <About key={section.id} />;
-        if (section.id === "reviews") return <Reviews key={section.id} />;
-        if (section.id === "contact") return <Contact key={section.id} />;
-        return <ProductSlider key={section.id} />;
-        return (
-          <section id={section.id} key={section.id}>
-            <h2>{section.label}</h2>
-          </section>
-        );
-      })}
-    </main>
+    <>
+      <Hero />
+      <main>
+        {siteConfig.sections.map((section) => {
+          if (section.id === "hero") return null; // Hero is already rendered
+          if (section.id === "calendar") return <Calendar key={section.id} />;
+          if (section.id === "products")
+            return <ProductSlider key={section.id} />;
+          if (section.id === "gallery") return <Gallery key={section.id} />;
+          if (section.id === "about") return <About key={section.id} />;
+          if (section.id === "reviews") return <Reviews key={section.id} />;
+          if (section.id === "contact") return <Contact key={section.id} />;
+          return (
+            <section id={section.id} key={section.id}>
+              <h2>{section.label}</h2>
+            </section>
+          );
+        })}
+      </main>
+    </>
   );
 }

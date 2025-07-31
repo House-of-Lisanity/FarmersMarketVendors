@@ -36,26 +36,17 @@ export default function ProductSlider() {
     <section id="products">
       <h2>Featured Treats</h2>
       {loading && <p>Loading products...</p>}
-      <div
-        style={{
-          display: "flex",
-          overflowX: "auto",
-          gap: "1rem",
-          paddingBottom: "1rem",
-        }}
-      >
-        <CardSlider>
-          {products.map((product) => (
-            <Card
-              key={product._id}
-              title={product.name}
-              content={product.description}
-              meta={product.price}
-              image={product.imageUrl}
-            />
-          ))}
-        </CardSlider>
-      </div>
+      <CardSlider>
+        {products.map((product) => (
+          <Card
+            key={product._id}
+            title={product.name}
+            content={product.description}
+            meta={product.price}
+            image={product.imageUrl}
+          />
+        ))}
+      </CardSlider>
     </section>
   );
 }
