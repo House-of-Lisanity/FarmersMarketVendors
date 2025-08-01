@@ -55,13 +55,13 @@ export default function Calendar() {
       {!loading && events.length === 0 && <p>No events scheduled right now.</p>}
 
       {!loading && events.length > 0 && (
-        <>
+        <div className="event-view">
           {viewMode === "list" ? (
             <EventList events={events} />
           ) : (
             <EventCalendar events={events} />
           )}
-        </>
+        </div>
       )}
     </section>
   );

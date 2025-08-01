@@ -1,6 +1,12 @@
 const demoAbout = [
   {
-    content: `Hi! I’m Ava, the hands behind Maybe She Can Bake. What started as weekend experiments in my tiny kitchen turned into a passion for creating joy through baked goods. From flaky croissants to playful cookie boxes, every treat I make is handcrafted with care, quality ingredients, and a sprinkle of whimsy.\n\nI specialize in small-batch, seasonal bakes — perfect for farmers markets, custom events, or those days when you just need something sweet. Supporting local is at the heart of everything I do, and I’m proud to bring a little comfort and creativity to our community one bake at a time.\n\nWhen I’m not in the kitchen, you can find me scouting vintage bakeware, chasing after my dog Basil, or dreaming up new flavor combos that push beyond the basics.`,
+    content: `Hello! I’m Heaven Smith, the baker and creator behind Maybe She Can Bake. I’m 25 years old and proud to call Denver, Colorado my home. For as long as I can remember, food has been a central part of my life — and it wasn’t long before baking became my true love.\n\n
+
+The joy of making a sweet treat and seeing someone’s face light up as they enjoy it has always been the highlight of my day. What started as a hobby, baking for friends and family, has grown into a deep passion that I’m excited to share with the world. It’s not just about the treats — it’s about the connections I can make through food. I’ve always believed that sharing a delicious dessert has the power to bring people together and create lasting memories, and now I want to do that for my community.\n\n
+
+As I’ve gotten older, my love for baking has only grown stronger, and I’m thrilled to now be offering my creations to more than just those close to me. I’m on a mission to create desserts that are creative, nostalgic, fun, and full of flavor — the kind of treats we all crave and that bring joy to every bite.\n\n
+
+Thank you for supporting my journey and allowing me to share the love and joy of baking with you. I’m excited to keep creating, innovating, and sharing the sweetness of life, one dessert at a time.`,
   },
 ];
 export default demoAbout;

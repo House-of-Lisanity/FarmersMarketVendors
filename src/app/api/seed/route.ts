@@ -25,6 +25,7 @@ export async function GET() {
       Product.deleteMany({}),
       Review.deleteMany({}),
       Event.deleteMany({}),
+      About.deleteMany({}),
     ]);
 
     // Seed Gallery
