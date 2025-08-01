@@ -1,0 +1,35 @@
+.card {
+  flex: 0 0 auto;
+  width: 250px;
+  max-width: 300px;
+  height: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+
+  small {
+    color: #777;
+    font-size: 0.8rem;
+  }
+}

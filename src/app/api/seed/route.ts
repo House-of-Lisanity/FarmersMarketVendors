@@ -12,6 +12,7 @@ import demoReviews from "@/lib/demoReviews";
 import demoEvents from "@/lib/demoEvents";
 
 import { NextResponse } from "next/server";
+import demoAbout from "@/lib/demoAbout";
 
 export async function GET() {
   await connectToDatabase();
@@ -64,6 +65,14 @@ export async function GET() {
     await Event.insertMany(
       demoEvents.map((event) => ({
         ...event,
+        isPublished: true,
+      }))
+    );
+
+    // Seed About section
+    await About.insertMany(
+      demoAbout.map((entry) => ({
+        content: entry.content,
         isPublished: true,
       }))
     );

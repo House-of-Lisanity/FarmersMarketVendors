@@ -1,0 +1,17 @@
+.hero-banner {
+  width: 100vw;
+  height: 50vh; // full viewport height
+  min-height: 300px; // fallback for very small screens
+  aspect-ratio: 3 / 1; // helps maintain proportion
+  background-image: url("/banner.png");
+  background-repeat: no-repeat;
+  background-size: contain; // don't crop; fit whole image
+  background-position: center;
+  background-color: #fefefe; // fallback behind transparent PNG
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: 768px) {
+    min-height: 400px;
+  }
+}

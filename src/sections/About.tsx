@@ -32,7 +32,7 @@ export default function About() {
       <h2>About Me</h2>
       {loading && <p>Loading bio...</p>}
       {!loading && bio && (
-        <p style={{ whiteSpace: "pre-wrap" }}>{bio.content}</p>
+        <div dangerouslySetInnerHTML={{ __html: bio.content }} />
       )}
     </section>
   );
